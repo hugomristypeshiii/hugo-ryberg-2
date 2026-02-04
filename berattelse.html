@@ -1,140 +1,173 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hugo Ryberg – Superhjälteberättelse</title>
-<style>
-/* ================= BODY & BACKGROUND ================= */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(-45deg, #00ffe0, #5d00ff, #ff33cc, #ffdd00);
-    background-size: 400% 400%;
-    animation: gradientFade 30s ease infinite;
-    color: #fff;
-    overflow-x: hidden;
-    line-height: 1.7;
-}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hugo Ryberg – Berättelse</title>
 
-/* Smooth gradient animation */
-@keyframes gradientFade {
-    0% {background-position: 0% 50%; }
-    50% {background-position: 100% 50%; }
-    100% {background-position: 0% 50%; }
+<style>
+
+/* ================= BAS ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    overflow-x: hidden;
+    line-height: 1.8;
 }
 
 /* ================= HEADER ================= */
 header {
     text-align: center;
-    padding: 60px 20px;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
+    padding: 70px 20px;
 }
-header h1 { font-size: 60px; color: #00ffe0; text-shadow: 0 0 15px #00ffe0; }
-header p { font-size: 22px; opacity: 0.9; }
 
-/* ================= SECTIONS ================= */
-section {
+header h1 {
+    font-size: 60px;
+    background: linear-gradient(90deg, gold, silver, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 15px gold, 0 0 25px silver;
+}
+
+header p {
+    opacity: 0.9;
+}
+
+/* ================= STOR LYXBOK ================= */
+.story-box {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    background: rgba(0,0,0,0.6);
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,255,224,0.3);
+    margin: 40px auto 80px auto;
+    padding: 50px;
+
+    background: linear-gradient(145deg, #111, #1b1b1b);
+    border-radius: 30px;
+
+    border: 2px solid gold;
+    box-shadow:
+        0 0 30px gold,
+        0 0 60px rgba(255,255,255,0.05);
 }
-section h2 {
-    color: #ffdd00;
+
+/* rubriker för varje del */
+.story-box h2 {
+    color: gold;
+    margin-top: 50px;
     text-align: center;
-    margin-bottom: 20px;
-}
-section p {
-    margin-bottom: 20px;
 }
 
-/* ================= BACKGROUND SHAPES ================= */
-.shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.05;
-    z-index: 0;
-    animation: floatShape 30s linear infinite;
-}
-.shape1 { width: 200px; height: 200px; background: #ff33cc; top: 10%; left: 5%; }
-.shape2 { width: 300px; height: 300px; background: #00ffe0; top: 50%; left: 70%; }
-.shape3 { width: 150px; height: 150px; background: #ffdd00; top: 70%; left: 20%; }
-
-@keyframes floatShape {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-50px) rotate(180deg); }
-    100% { transform: translateY(0px) rotate(360deg); }
+/* kortare rader = snyggare läsning */
+.story-box p {
+    max-width: 650px;
+    margin: 15px auto;
 }
 
-/* ================= LINK BACK ================= */
-.back-link {
+/* liten guld-linje mellan delar */
+.divider {
+    height: 2px;
+    width: 120px;
+    background: linear-gradient(90deg, transparent, gold, transparent);
+    margin: 40px auto;
+}
+
+/* ================= TILLBAKA KNAPP ================= */
+.back {
     display: block;
     text-align: center;
-    margin: 50px auto;
-    color: #00ffe0;
+    width: 260px;
+    margin: 60px auto 0 auto;
+    padding: 15px;
+
+    border: 2px solid silver;
+    border-radius: 15px;
+
+    color: silver;
     text-decoration: none;
-    font-size: 20px;
+
+    box-shadow: 0 0 20px silver;
+    transition: 0.3s;
 }
-.back-link:hover { text-decoration: underline; }
+
+.back:hover {
+    background: silver;
+    color: black;
+}
+
+/* ================= DIAMANTGLITTER ================= */
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: float 12s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-120vh); }
+}
+
 </style>
 </head>
+
 <body>
 
-<!-- Background shapes -->
-<div class="shape shape1"></div>
-<div class="shape shape2"></div>
-<div class="shape shape3"></div>
+<!-- små diamanter -->
+<div class="sparkle" style="left:10%; animation-delay:0s;"></div>
+<div class="sparkle" style="left:30%; animation-delay:2s;"></div>
+<div class="sparkle" style="left:60%; animation-delay:4s;"></div>
+<div class="sparkle" style="left:85%; animation-delay:1s;"></div>
 
 <header>
-    <h1>Hugo Ryberg 💪</h1>
-    <p>Superhjälten som är tvärbra på allt</p>
+    <h1>Hugo Ryberg 💎</h1>
+    <p>Superhjälteberättelsen</p>
 </header>
 
-<!-- 6 delar av berättelsen -->
-<section>
-<h2>Del 1: Uppvaknandet</h2>
+
+<!-- ================= ALLT I EN BOX ================= -->
+<div class="story-box">
+
+<h2>Del 1 – Uppvaknandet</h2>
 <p>Hugo Ryberg var inte som andra människor. Redan som liten kunde han lyfta skolbussen, lösa avancerad matematik på 5 sekunder och tala flytande på tio språk – inklusive språk som ännu inte existerade.</p>
 <p>En dag, när en mystisk meteor föll över hans hemstad, träffades Hugo av ett ljus som gav honom superkrafter bortom fantasin. Hans styrka, intelligens och charm blev nu legendär.</p>
-</section>
 
-<section>
-<h2>Del 2: Den första utmaningen</h2>
+<div class="divider"></div>
+
+<h2>Del 2 – Den första utmaningen</h2>
 <p>Nyheten om Hugos krafter spreds som eld i staden. Ett enormt monster, “BetongBertil”, började terrorisera staden och blockerade alla vägar.</p>
 <p>Hugo tog ett enda steg och lyfte hela monstrets berg av betongblock med ett leende. Medan monstret stirrade förvirrat började Hugo analysera dess svagheter – och inom 30 sekunder hade han utvecklat en plan lika briljant som hans biceps var stora.</p>
-</section>
 
-<section>
-<h2>Del 3: Team Hugo</h2>
-<p>Hugo insåg snart att även en superhjälte behöver hjälp ibland… fast inte på samma sätt som vanliga hjältar. Han skapade sitt team: Casper, hans assistent och strateg-geni; RoboHugo, en AI-version av sig själv som kunde göra exakt allt – men med lite sämre charm; och Flamma, en eldsprutande drönare som aldrig brände någon oskyldig.</p>
-<p>Tillsammans blev de oslagbara – fast Hugo, förstås, var alltid bäst på precis allt.</p>
-</section>
+<div class="divider"></div>
 
-<section>
-<h2>Del 4: Den stora hemligheten</h2>
-<p>En dag upptäckte Hugo att meteorens kraft hade öppnat porten till en annan dimension där alla superhjältars drömmar blev verklighet – inklusive hans egna.</p>
-<p>Hugo kunde nu inte bara lyfta berg, han kunde förflytta planeter, tala med djur och skapa avancerad teknologi med en blinkning. Men Hugo var ödmjuk – han använde sina krafter för att göra världen bättre, ett leende i taget.</p>
-</section>
+<h2>Del 3 – Team Hugo</h2>
+<p>Hugo skapade sitt team: Casper, hans assistent och strateg-geni; RoboHugo, en AI-version av sig själv; och Flamma, en eldsprutande drönare.</p>
+<p>Tillsammans blev de oslagbara – men Hugo var förstås alltid bäst på exakt allt.</p>
 
-<section>
-<h2>Del 5: Den ultimata utmaningen</h2>
-<p>En skurk, kallad “KaosKalle”, bestämde sig för att ta över världen med sina arméer av robotar och hyperintelligenta bläckfiskar.</p>
-<p>Hugo var inte orolig. Han tränade i 10 minuter, löste skurkens avancerade algoritmer på 3 sekunder och avslutade striden med ett enda hopp… medan han räddade hundra katter på vägen. Staden stod i ovationer. Ingen hade någonsin sett något liknande.</p>
-</section>
+<div class="divider"></div>
 
-<section>
-<h2>Del 6: Legenden lever vidare</h2>
-<p>Efter att ha räddat världen för hundrade gången satte sig Hugo på toppen av stadens högsta skyskrapa. Han blickade ut över horisonten, log och viskade: "Det här är bara början."</p>
-<p>Ryktet om Hugo spred sig över hela galaxen. Barn drömde om att vara som honom, vetenskapsmän ville uppfinna saker som kunde mäta hans briljans, och till och med tiden själv fick respekt för Hugo Ryberg.</p>
-</section>
+<h2>Del 4 – Den stora hemligheten</h2>
+<p>Meteorens kraft öppnade en dimension där allt verkade möjligt.</p>
+<p>Hugo kunde nu förflytta planeter, tala med djur och skapa teknik med en blinkning – men han använde allt för att hjälpa världen.</p>
 
-<a class="back-link" href="index.html">← Tillbaka till startsidan</a>
+<div class="divider"></div>
+
+<h2>Del 5 – Den ultimata utmaningen</h2>
+<p>KaosKalle attackerade med robotarméer och galen teknologi.</p>
+<p>Hugo tränade i 10 minuter, löste alla algoritmer och räddade staden innan lunch. Folk kallade honom ostoppbar.</p>
+
+<div class="divider"></div>
+
+<h2>Del 6 – Legenden lever vidare</h2>
+<p>Efter att ha räddat världen otaliga gånger satt Hugo på stadens högsta tak och blickade ut över horisonten.</p>
+<p>Ryktet om honom spreds över hela galaxen. Och alla visste samma sak: när något går fel… då kommer Hugo Ryberg.</p>
+
+<a href="index.html" class="back">← Tillbaka till startsidan</a>
+
+</div>
 
 </body>
 </html>
-
