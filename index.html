@@ -1,204 +1,138 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hugo Ryberg</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hugo Ryberg Universe 💎</title>
 <style>
-
-/* ===================== BAS ===================== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #0a0a0a, #111);
     color: white;
-    text-align: center;
-    background: radial-gradient(circle at top, #1a1a1a, #000);
     overflow-x: hidden;
 }
 
-/* ===================== HEADER ===================== */
+/* HEADER */
 header {
-    padding: 80px 20px;
+    text-align: center;
+    padding: 70px 20px;
 }
 
 header h1 {
-    font-size: 70px;
-
-    /* guld + silver text */
-    background: linear-gradient(90deg, gold, silver, white);
+    font-size: 60px;
+    background: linear-gradient(90deg, gold, silver, #00ffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    text-shadow:
-        0 0 10px gold,
-        0 0 20px silver;
+    text-shadow: 0 0 15px gold, 0 0 25px silver;
 }
 
 header p {
-    font-size: 22px;
     opacity: 0.9;
 }
 
-/* ===================== NAV / KORT ===================== */
+/* MAIN CARDS */
 .main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 35px;
-    margin-top: 60px;
+    gap: 30px;
+    margin: 50px 20px;
 }
 
-/* lyxiga kort */
 .card {
+    background: linear-gradient(145deg, #111, #1b1b1b);
+    border-radius: 25px;
+    padding: 30px 40px;
+    width: 220px;
+    text-align: center;
     text-decoration: none;
     color: white;
-    width: 260px;
-    padding: 40px 25px;
-    border-radius: 25px;
-
-    background: linear-gradient(145deg, #111, #222);
-    border: 2px solid rgba(255,255,255,0.1);
-
-    backdrop-filter: blur(10px);
-
-    transition: 0.35s;
-    position: relative;
-    overflow: hidden;
-}
-
-/* shimmer-effekt */
-.card::before {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
-    transform: rotate(25deg);
-    transition: 0.7s;
-}
-
-.card:hover::before {
-    top: 100%;
-    left: 100%;
+    box-shadow: 0 0 25px silver;
+    transition: 0.3s;
+    border: 2px solid gold;
 }
 
 .card:hover {
-    transform: scale(1.08);
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px gold, 0 0 50px silver;
 }
 
-/* olika lyxfärger */
-.gold { border-color: gold; box-shadow: 0 0 25px gold; }
-.silver { border-color: silver; box-shadow: 0 0 25px silver; }
-.diamond { border-color: #00ffff; box-shadow: 0 0 25px #00ffff; }
-
 .card h2 {
-    font-size: 30px;
+    font-size: 24px;
+    background: linear-gradient(90deg, gold, silver);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 15px;
-    opacity: 0.85;
+    font-size: 16px;
+    opacity: 0.8;
 }
 
-/* ===================== KURSBOX ===================== */
-.course {
-    margin: 90px auto;
-    max-width: 650px;
-    padding: 30px;
-
-    background: linear-gradient(145deg, #111, #1b1b1b);
-    border-radius: 25px;
-
-    border: 2px solid gold;
-    box-shadow: 0 0 30px gold;
-
-    font-size: 20px;
-    color: gold;
-}
-
-/* ===================== DIAMANTER I BAKGRUND ===================== */
+/* LYXGLITTER */
 .sparkle {
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     background: white;
     border-radius: 50%;
     opacity: 0.7;
-    animation: float 10s linear infinite;
+    animation: float 12s linear infinite;
 }
 
 @keyframes float {
-    from { transform: translateY(0px); }
+    from { transform: translateY(0); }
     to { transform: translateY(-120vh); }
-}
-
-/* ===================== FOOTER ===================== */
-footer {
-    margin-top: 60px;
-    padding: 20px;
-    opacity: 0.6;
-    font-size: 14px;
 }
 
 </style>
 </head>
-
 <body>
 
-<!-- små diamanter -->
+<!-- Glitter i bakgrunden -->
 <div class="sparkle" style="left:10%; animation-delay:0s;"></div>
 <div class="sparkle" style="left:30%; animation-delay:2s;"></div>
-<div class="sparkle" style="left:55%; animation-delay:4s;"></div>
-<div class="sparkle" style="left:75%; animation-delay:1s;"></div>
+<div class="sparkle" style="left:50%; animation-delay:4s;"></div>
+<div class="sparkle" style="left:70%; animation-delay:1s;"></div>
 <div class="sparkle" style="left:90%; animation-delay:3s;"></div>
 
 <header>
     <h1>Hugo Ryberg 💎</h1>
-    <p>Stark. Smart. Tvärbra på allt.</p>
+    <p>Välkommen till det ultimata Hugo-universumet</p>
 </header>
 
-<!-- ===================== KNAPPAR (SAMMA FUNKTIONER) ===================== -->
 <div class="main">
-
-    <a href="styrka.html" class="card gold">
+    <a href="styrka.html" class="card">
         <h2>🏋️ Styrka</h2>
-        <p>Extrema gymrekord och galna vikter</p>
+        <p>Otroliga gymrekord bortom fantasin</p>
     </a>
 
-    <a href="skills.html" class="card silver">
+    <a href="skills.html" class="card">
         <h2>🧠 Skills</h2>
-        <p>Smartast i rummet – alltid</p>
+        <p>Hugos smarta och övermänskliga förmågor</p>
     </a>
 
-    <a href="meriter.html" class="card diamond">
+    <a href="meriter.html" class="card">
         <h2>🏆 Meriter</h2>
-        <p>De sjukaste prestationerna någonsin</p>
+        <p>Rekord och guldmedaljer i alla världar</p>
     </a>
 
-    <a href="berattelse.html" class="card gold">
+    <a href="berattelse.html" class="card">
         <h2>📖 Berättelse</h2>
-        <p>Superhjälte-sagan om Hugo</p>
+        <p>Hugo Rybergs legend – läs hela storyn</p>
     </a>
-    <a href="casper.html" class="card silver">
-    <h2>🤵 Assistenten Casper</h2>
-</a>
 
+    <a href="casper.html" class="card">
+        <h2>🤵 Assistenten Casper</h2>
+    </a>
+
+    <a href="spel.html" class="card">
+        <h2>🎮 Mini-spel</h2>
+        <p>Fånga guldtackor och diamanter!</p>
+    </a>
 </div>
-
-<!-- ===================== KURS INFO ===================== -->
-<div class="course">
-💰 Köp min kurs! Pris 50 000 KR <br>
-Kontakta min assistent Casper Lindén för köp och frågor.
-</div>
-
-<footer>
-© Hugo Ryberg – Officiell Lyxversion
-</footer>
 
 </body>
 </html>
-
