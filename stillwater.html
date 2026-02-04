@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stillwater 💧 | Hugo Ryberg Universe</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #0a0a0a, #111);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px gold, 0 0 50px silver;
+}
+
+header h1 {
+    font-size: 48px;
+    background: linear-gradient(90deg, gold, silver, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px gold, 0 0 25px silver;
+}
+
+header p {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: linear-gradient(145deg, #111, #1b1b1b);
+    padding: 40px;
+    border-radius: 25px;
+    border: 2px solid gold;
+    box-shadow: 0 0 40px silver, 0 0 80px rgba(255,255,255,0.05);
+}
+
+/* TEXT */
+.container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* CTA BUTTON */
+.cta {
+    display: block;
+    width: 220px;
+    margin: 30px auto 0 auto;
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid gold;
+    color: gold;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 0 25px gold;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background: gold;
+    color: black;
+    box-shadow: 0 0 50px gold;
+}
+
+/* BACK BUTTON */
+.back {
+    display: block;
+    text-align: center;
+    width: 220px;
+    margin: 50px auto;
+    padding: 12px;
+    border: 2px solid gold;
+    border-radius: 15px;
+    color: gold;
+    text-decoration: none;
+    box-shadow: 0 0 15px gold;
+    transition: 0.3s;
+}
+
+.back:hover {
+    background: gold;
+    color: black;
+}
+
+/* DIAMONDS & GLITTER */
+.sparkle, .diamond, .goldbar {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.sparkle {
+    width: 5px;
+    height: 5px;
+    background: white;
+    animation: float 12s linear infinite;
+}
+
+.diamond {
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(45deg, white, #00ffff);
+    transform: rotate(45deg);
+    animation: float 18s linear infinite;
+}
+
+.goldbar {
+    width: 40px;
+    height: 16px;
+    background: linear-gradient(90deg, #ffd700, #ffb700);
+    border-radius: 4px;
+    box-shadow: 0 0 10px gold;
+    animation: float 25s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-130vh); }
+}
+</style>
+</head>
+<body>
+
+<!-- GLITTER & DIAMANTS -->
+<div class="sparkle" style="left:10%; animation-delay:0s;"></div>
+<div class="sparkle" style="left:50%; animation-delay:3s;"></div>
+<div class="diamond" style="left:30%; animation-delay:2s;"></div>
+<div class="diamond" style="left:70%; animation-delay:5s;"></div>
+<div class="goldbar" style="left:20%; animation-delay:1s;"></div>
+<div class="goldbar" style="left:80%; animation-delay:4s;"></div>
+
+<header>
+    <!-- Byt src med din logga -->
+    <img src="stillwater-logo.png" alt="Stillwater Logga">
+    <h1>Stillwater 💧</h1>
+    <p>Hugos revolutionerande vattenflaskor som renar vatten</p>
+</header>
+
+<div class="container">
+    <p>Stillwater är Hugos eget företag som förändrar världen! Flaskorna renar vatten på ett revolutionerande sätt och gör rent vatten tillgängligt för alla.</p>
+    <p>Företaget har redan omsatt <strong>flera miljarder</strong> och fortsätter expandera globalt med lyxiga, high-end vattenflaskor.</p>
+    <p>Med guldsilver-detaljer och premiumdesign är varje flaska både ett konstverk och ett verktyg för en renare värld.</p>
+
+    <a href="#" class="cta">Beställ din lyxflaska 💎</a>
+</div>
+
+<a href="index.html" class="back">← Tillbaka till startsidan</a>
+
+</body>
+</html>
