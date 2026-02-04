@@ -93,6 +93,8 @@ header p {
     position: absolute;
     border-radius: 50%;
     opacity: 0.7;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .sparkle {
@@ -176,8 +178,13 @@ header p {
     </a>
 
     <a href="spel.html" class="card fade-in">
-        <h2>🎮 Mini-spel</h2>
-        <p>Fånga guldtackor och diamanter!</p>
+        <h2>🎮 Mini-quiz</h2>
+        <p>Testa dina kunskaper om Hugo!</p>
+    </a>
+
+    <a href="stillwater.html" class="card fade-in">
+        <h2>💧 Stillwater</h2>
+        <p>Hugos lyxiga vattenflaskor – miljarder i omsättning!</p>
     </a>
 </div>
 
@@ -206,11 +213,10 @@ faders.forEach(fader => appearOnScroll.observe(fader));
 </audio>
 
 <script>
-// Sätt volym låg så det inte stör
+// Låg volym så det inte stör
 const music = document.getElementById('bgMusic');
 music.volume = 0.2; // 20%
 </script>
 
 </body>
 </html>
-
