@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hugo Lyxspel 💎</title>
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #0a0a0a, #111);
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 48px;
+    background: linear-gradient(90deg, gold, silver, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px gold, 0 0 25px silver;
+}
+
+#gameCanvas {
+    display: block;
+    margin: 0 auto;
+    background: radial-gradient(circle at top, #111, #222);
+    border: 3px solid gold;
+    border-radius: 20px;
+}
+
+/* poäng-display */
+#score {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    color: gold;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Catch the Diamonds 💎</h1>
+<canvas id="gameCanvas" width="600" height="400"></canvas>
+<div id="score">Poäng: 0</div>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+let score = 0;
+
+// spelare
+const player = {
+    x: canvas.width/2 - 40,
+    y: canvas.height - 30,
+    width: 80,
+    height: 20,
+    color: 'gold'
+};
+
+// objekt som faller
+const items = [];
+const types = ['gold', 'diamond'];
+
+function spawnItem() {
+    const type = types[Math.floor(Math.random()*types.length)];
+    items.push({
+        x: Math.random()*(canvas.width-30),
+        y: -30,
+        size: type==='gold'?30:20,
+        type: type,
+        speed: 2 + Math.random()*3
+    });
+}
+
+// styrning med mus
+canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    player.x = e.clientX - rect.left - player.width/2;
+});
+
+// game loop
+function update() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    // rita spelare
+    ctx.fillStyle = player.color;
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+
+    // rita och flytta items
+    for(let i=0; i<items.length; i++){
+        const it = items[i];
+        ctx.fillStyle = it.type==='gold'?'gold':'#00ffff';
+        ctx.beginPath();
+        if(it.type==='diamond'){
+            ctx.moveTo(it.x+it.size/2,it.y);
+            ctx.lineTo(it.x+it.size,it.y+it.size/2);
+            ctx.lineTo(it.x+it.size/2,it.y+it.size);
+            ctx.lineTo(it.x,it.y+it.size/2);
+            ctx.closePath();
+        } else {
+            ctx.rect(it.x,it.y,it.size,it.size/2);
+        }
+        ctx.fill();
+
+        it.y += it.speed;
+
+        // kolla collision med spelare
+        if(it.y + it.size >= player.y && it.x + it.size >= player.x && it.x <= player.x + player.width){
+            score += it.type==='gold'?10:20;
+            document.getElementById('score').innerText = 'Poäng: '+score;
+            items.splice(i,1);
+            i--;
+        }
+
+        // ta bort om den faller ner
+        if(it.y > canvas.height){
+            items.splice(i,1);
+            i--;
+        }
+    }
+
+    requestAnimationFrame(update);
+}
+
+// spawn items varje 700ms
+setInterval(spawnItem,700);
+
+update();
+
+</script>
+
+</body>
+</html>
