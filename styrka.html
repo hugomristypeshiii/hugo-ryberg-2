@@ -1,106 +1,185 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8" />
-    <title>Hugos Gymstyrka</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hugo Ryberg – Styrka</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #0f0f0f, #1c1c1c);
-            color: white;
-            text-align: center;
-        }
+<style>
 
-        h1 {
-            padding: 50px 20px 20px;
-            font-size: 48px;
-        }
+/* ================= BAS ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
 
-        .subtitle {
-            opacity: 0.7;
-            margin-bottom: 40px;
-        }
+/* ================= HEADER ================= */
+header {
+    text-align: center;
+    padding: 70px 20px;
+}
 
-        .container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            padding: 20px;
-        }
+header h1 {
+    font-size: 60px;
 
-        .card {
-            background: #222;
-            width: 260px;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-            transition: 0.25s;
-        }
+    background: linear-gradient(90deg, gold, silver, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-        .card:hover {
-            transform: scale(1.07);
-        }
+    text-shadow: 0 0 15px gold, 0 0 25px silver;
+}
 
-        .lift {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+header p {
+    opacity: 0.9;
+}
 
-        .weight {
-            font-size: 32px;
-            font-weight: bold;
-            color: #ff6a00;
-        }
+/* ================= STOR LYXLÅDA ================= */
+.gym-box {
+    max-width: 900px;
+    margin: 40px auto 80px auto;
+    padding: 50px;
 
-        a {
-            display: inline-block;
-            margin: 50px 0;
-            padding: 12px 25px;
-            background: #ff6a00;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-        }
+    background: linear-gradient(145deg, #111, #1b1b1b);
+    border-radius: 30px;
 
-        a:hover {
-            background: #ff8c42;
-        }
-    </style>
+    border: 2px solid gold;
+    box-shadow:
+        0 0 30px gold,
+        0 0 60px rgba(255,255,255,0.05);
+}
+
+/* varje lyft */
+.lift {
+    margin: 50px 0;
+}
+
+.lift h2 {
+    color: gold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.lift p {
+    text-align: center;
+    font-size: 20px;
+}
+
+/* värdet extra lyxigt */
+.weight {
+    font-size: 32px;
+    font-weight: bold;
+
+    background: linear-gradient(90deg, gold, silver);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 12px gold;
+}
+
+/* divider */
+.divider {
+    height: 2px;
+    width: 120px;
+    background: linear-gradient(90deg, transparent, silver, transparent);
+    margin: 40px auto;
+}
+
+/* ================= TILLBAKA ================= */
+.back {
+    display: block;
+    text-align: center;
+    width: 260px;
+    margin: 60px auto 0 auto;
+    padding: 15px;
+
+    border: 2px solid silver;
+    border-radius: 15px;
+
+    color: silver;
+    text-decoration: none;
+
+    box-shadow: 0 0 20px silver;
+    transition: 0.3s;
+}
+
+.back:hover {
+    background: silver;
+    color: black;
+}
+
+/* ================= DIAMANTGLITTER ================= */
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: float 12s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-120vh); }
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>🏋️ Hugos Gymstyrka</h1>
-<p class="subtitle">Personbästa. Inga ursäkter. Bara rå kraft.</p>
+<!-- glitter -->
+<div class="sparkle" style="left:10%; animation-delay:0s;"></div>
+<div class="sparkle" style="left:30%; animation-delay:2s;"></div>
+<div class="sparkle" style="left:60%; animation-delay:4s;"></div>
+<div class="sparkle" style="left:85%; animation-delay:1s;"></div>
 
-<div class="container">
+<header>
+    <h1>🏋️ Hugo Ryberg – Styrka</h1>
+    <p>Gymrekord bortom det mänskliga</p>
+</header>
 
-    <div class="card">
-        <div class="lift">Bänkpress</div>
-        <div class="weight">310 kg</div>
-    </div>
 
-    <div class="card">
-        <div class="lift">Marklyft</div>
-        <div class="weight">420 kg</div>
-    </div>
+<!-- ================= ALLT I EN BOX ================= -->
+<div class="gym-box">
 
-    <div class="card">
-        <div class="lift">Knäböj</div>
-        <div class="weight">360 kg</div>
-    </div>
-
-    <div class="card">
-        <div class="lift">Axelpress</div>
-        <div class="weight">190 kg</div>
-    </div>
-
+<div class="lift">
+    <h2>Bänkpress</h2>
+    <p class="weight">420 kg</p>
+    <p>En vanlig uppvärmning innan frukost.</p>
 </div>
 
-<a href="index.html">⬅ Tillbaka</a>
+<div class="divider"></div>
+
+<div class="lift">
+    <h2>Marklyft</h2>
+    <p class="weight">650 kg</p>
+    <p>Lyfter mer än en bil – utan bälte.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="lift">
+    <h2>Knäböj</h2>
+    <p class="weight">580 kg</p>
+    <p>Golvet blev nervöst. Vikterna också.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="lift">
+    <h2>Militärpress</h2>
+    <p class="weight">310 kg</p>
+    <p>Trycker upp det som om det vore en tom stång.</p>
+</div>
+
+<a href="index.html" class="back">← Tillbaka till startsidan</a>
+
+</div>
 
 </body>
 </html>
