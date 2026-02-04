@@ -3,19 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hugo Lyxspel 💎</title>
+<title>Hugo Lyx-Quiz 💎</title>
 <style>
 body {
     margin: 0;
-    overflow: hidden;
     font-family: Arial, sans-serif;
     background: radial-gradient(circle at top, #0a0a0a, #111);
     color: white;
+    overflow-x: hidden;
 }
 
-h1 {
+/* HEADER */
+header {
     text-align: center;
-    margin: 20px 0;
+    padding: 50px 20px;
+}
+
+header h1 {
     font-size: 48px;
     background: linear-gradient(90deg, gold, silver, #00ffff);
     -webkit-background-clip: text;
@@ -23,116 +27,148 @@ h1 {
     text-shadow: 0 0 15px gold, 0 0 25px silver;
 }
 
-#gameCanvas {
-    display: block;
-    margin: 0 auto;
-    background: radial-gradient(circle at top, #111, #222);
-    border: 3px solid gold;
-    border-radius: 20px;
+/* QUIZ CONTAINER */
+.quiz-container {
+    max-width: 700px;
+    margin: 20px auto 80px auto;
+    padding: 40px;
+    background: linear-gradient(145deg, #111, #1b1b1b);
+    border-radius: 25px;
+    border: 2px solid gold;
+    box-shadow: 0 0 40px silver, 0 0 80px rgba(255,255,255,0.05);
 }
 
-/* poäng-display */
-#score {
+/* QUESTIONS */
+.question {
+    font-size: 22px;
+    margin-bottom: 25px;
     text-align: center;
-    font-size: 24px;
-    margin-top: 10px;
+}
+
+/* ANSWER BUTTONS */
+button.answer {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 2px solid gold;
+    background: linear-gradient(90deg, #222, #333);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.answer:hover {
+    background: gold;
+    color: black;
+    box-shadow: 0 0 20px gold;
+}
+
+/* SCORE DISPLAY */
+#scoreDisplay {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
     color: gold;
 }
 
+/* BACK BUTTON */
+.back {
+    display: block;
+    text-align: center;
+    width: 220px;
+    margin: 50px auto;
+    padding: 12px;
+    border: 2px solid gold;
+    border-radius: 15px;
+    color: gold;
+    text-decoration: none;
+    box-shadow: 0 0 15px gold;
+    transition: 0.3s;
+}
+
+.back:hover {
+    background: gold;
+    color: black;
+}
 </style>
 </head>
 <body>
 
-<h1>Catch the Diamonds 💎</h1>
-<canvas id="gameCanvas" width="600" height="400"></canvas>
-<div id="score">Poäng: 0</div>
+<header>
+    <h1>Hugo Lyx-Quiz 💎</h1>
+</header>
+
+<div class="quiz-container">
+    <div id="quiz"></div>
+    <div id="scoreDisplay"></div>
+</div>
+
+<a href="index.html" class="back">← Tillbaka till startsidan</a>
 
 <script>
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
+// Quiz-data
+const quizData = [
+    {
+        question: "Vad är Hugos superkraft?",
+        answers: ["Styrka och snabbhet", "Kan flyga", "Osynlighet"],
+        correct: 0
+    },
+    {
+        question: "Vilken sport har Hugo vunnit VM i?",
+        answers: ["Fotboll", "Fem olika sporter", "Pingis"],
+        correct: 1
+    },
+    {
+        question: "Vilket språk kan Hugo flytande?",
+        answers: ["Engelska", "Alla språk", "Spanska"],
+        correct: 1
+    },
+    {
+        question: "Vad samlar Hugo i gymmet?",
+        answers: ["Vikter och guldtackor", "Bara hantlar", "Inget"],
+        correct: 0
+    },
+    {
+        question: "Vem är Hugos assistent?",
+        answers: ["Casper Lindén", "Clark Kent", "Tony Stark"],
+        correct: 0
+    }
+];
 
+let currentQuestion = 0;
 let score = 0;
 
-// spelare
-const player = {
-    x: canvas.width/2 - 40,
-    y: canvas.height - 30,
-    width: 80,
-    height: 20,
-    color: 'gold'
-};
+const quizDiv = document.getElementById('quiz');
+const scoreDiv = document.getElementById('scoreDisplay');
 
-// objekt som faller
-const items = [];
-const types = ['gold', 'diamond'];
-
-function spawnItem() {
-    const type = types[Math.floor(Math.random()*types.length)];
-    items.push({
-        x: Math.random()*(canvas.width-30),
-        y: -30,
-        size: type==='gold'?30:20,
-        type: type,
-        speed: 2 + Math.random()*3
-    });
-}
-
-// styrning med mus
-canvas.addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    player.x = e.clientX - rect.left - player.width/2;
-});
-
-// game loop
-function update() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    // rita spelare
-    ctx.fillStyle = player.color;
-    ctx.fillRect(player.x, player.y, player.width, player.height);
-
-    // rita och flytta items
-    for(let i=0; i<items.length; i++){
-        const it = items[i];
-        ctx.fillStyle = it.type==='gold'?'gold':'#00ffff';
-        ctx.beginPath();
-        if(it.type==='diamond'){
-            ctx.moveTo(it.x+it.size/2,it.y);
-            ctx.lineTo(it.x+it.size,it.y+it.size/2);
-            ctx.lineTo(it.x+it.size/2,it.y+it.size);
-            ctx.lineTo(it.x,it.y+it.size/2);
-            ctx.closePath();
-        } else {
-            ctx.rect(it.x,it.y,it.size,it.size/2);
-        }
-        ctx.fill();
-
-        it.y += it.speed;
-
-        // kolla collision med spelare
-        if(it.y + it.size >= player.y && it.x + it.size >= player.x && it.x <= player.x + player.width){
-            score += it.type==='gold'?10:20;
-            document.getElementById('score').innerText = 'Poäng: '+score;
-            items.splice(i,1);
-            i--;
-        }
-
-        // ta bort om den faller ner
-        if(it.y > canvas.height){
-            items.splice(i,1);
-            i--;
-        }
+function loadQuestion() {
+    if(currentQuestion >= quizData.length){
+        quizDiv.innerHTML = `<h2>Quiz klart!</h2><p>Din poäng: ${score} / ${quizData.length*10}</p>`;
+        return;
     }
 
-    requestAnimationFrame(update);
+    const q = quizData[currentQuestion];
+    let html = `<div class="question">${q.question}</div>`;
+    q.answers.forEach((ans,i) => {
+        html += `<button class="answer" onclick="checkAnswer(${i})">${ans}</button>`;
+    });
+    quizDiv.innerHTML = html;
 }
 
-// spawn items varje 700ms
-setInterval(spawnItem,700);
+function checkAnswer(selected){
+    if(selected === quizData[currentQuestion].correct){
+        score += 10;
+    }
+    currentQuestion++;
+    loadQuestion();
+}
 
-update();
-
+loadQuestion();
 </script>
 
 </body>
 </html>
+
