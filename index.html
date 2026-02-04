@@ -199,6 +199,18 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer){
 faders.forEach(fader => appearOnScroll.observe(fader));
 </script>
 
+<!-- ================= LYXIG BAKGRUNDSMUSIK ================= -->
+<audio id="bgMusic" loop autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_1f1e4310d1.mp3?filename=epic-cinematic-background-112193.mp3" type="audio/mpeg">
+    Ditt webbläsare stödjer inte ljud.
+</audio>
+
+<script>
+// Sätt volym låg så det inte stör
+const music = document.getElementById('bgMusic');
+music.volume = 0.2; // 20%
+</script>
+
 </body>
 </html>
 
