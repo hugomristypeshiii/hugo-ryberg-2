@@ -6,25 +6,25 @@
 <title>Hugo Ryberg – Legenden</title>
 
 <style>
-/* ================= BODY & ANIMATED BACKGROUND ================= */
+/* ================= BODY & SMOOTH ANIMATED BACKGROUND ================= */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
     overflow-x: hidden;
-    background: linear-gradient(135deg, #00ffe0, #5d00ff, #001f3f);
-    animation: gradientPulse 20s ease infinite;
     color: white;
     text-align: center;
+    /* Bakgrund med smooth färgblandning */
+    background: linear-gradient(45deg, #00ffe0, #5d00ff, #ff33cc, #ffdd00);
+    background-size: 400% 400%;
+    animation: gradientFlow 30s ease infinite;
 }
 
-@keyframes gradientPulse {
-    0%   {background: linear-gradient(135deg, #00ffe0, #5d00ff, #001f3f);}
-    25%  {background: linear-gradient(135deg, #00ffd8, #7a00ff, #00204f);}
-    50%  {background: linear-gradient(135deg, #00ffe0, #9c00ff, #001f4f);}
-    75%  {background: linear-gradient(135deg, #00ffcc, #5d00ff, #00205f);}
-    100% {background: linear-gradient(135deg, #00ffe0, #5d00ff, #001f3f);}
+@keyframes gradientFlow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
 /* ================= HEADER ================= */
@@ -38,7 +38,7 @@ header {
 }
 
 @keyframes headerGlow {
-    0% { box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+    0% { box-shadow: 0 0 15px rgba(0,255,200,0.3); }
     100% { box-shadow: 0 0 50px rgba(0,255,200,0.7); }
 }
 
