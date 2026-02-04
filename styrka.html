@@ -2,71 +2,70 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hugo Ryberg – Legenden</title>
+    <title>Hugos Gymstyrka</title>
 
     <style>
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #0f0f0f, #1c1c1c);
             color: white;
             text-align: center;
         }
 
-        header {
-            padding: 80px 20px;
-            background: linear-gradient(90deg, #ff6a00, #ffb347);
-        }
-
         h1 {
-            font-size: 60px;
-            margin: 0;
+            padding: 50px 20px 20px;
+            font-size: 48px;
         }
 
         .subtitle {
-            font-size: 22px;
-            opacity: 0.9;
+            opacity: 0.7;
+            margin-bottom: 40px;
         }
 
-        section {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: auto;
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 20px;
         }
 
         .card {
-            background: #2b2b2b;
-            margin: 20px 0;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            transition: transform 0.2s ease;
+            background: #222;
+            width: 260px;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            transition: 0.25s;
         }
 
         .card:hover {
-            transform: scale(1.05);
+            transform: scale(1.07);
         }
 
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            background: #111;
-            font-size: 14px;
-            opacity: 0.7;
+        .lift {
+            font-size: 22px;
+            margin-bottom: 10px;
         }
 
-        button {
-            padding: 12px 20px;
-            font-size: 18px;
-            border-radius: 10px;
-            border: none;
+        .weight {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff6a00;
+        }
+
+        a {
+            display: inline-block;
+            margin: 50px 0;
+            padding: 12px 25px;
             background: #ff6a00;
             color: white;
-            cursor: pointer;
+            text-decoration: none;
+            border-radius: 10px;
         }
 
-        button:hover {
+        a:hover {
             background: #ff8c42;
         }
     </style>
@@ -74,39 +73,35 @@
 
 <body>
 
-<header>
-    <h1>Hugo Ryberg 💪</h1>
-    <p class="subtitle">Stark. Smart. Tvärbra på exakt allt.</p>
-</header>
+<h1>🏋️ Hugos Gymstyrka</h1>
+<p class="subtitle">Personbästa. Inga ursäkter. Bara rå kraft.</p>
 
-<section>
+<div class="container">
+
     <div class="card">
-        <h2>🏋️ Styrka</h2>
-        <p>Kan lyfta mer än gymmet själv. Vikter är rädda för honom.</p>
+        <div class="lift">Bänkpress</div>
+        <div class="weight">310 kg</div>
     </div>
 
     <div class="card">
-        <h2>🧠 Hjärna</h2>
-        <p>Löser matteproblem snabbare än miniräknare. IQ: överdrivet högt.</p>
+        <div class="lift">Marklyft</div>
+        <div class="weight">420 kg</div>
     </div>
 
     <div class="card">
-        <h2>⚡ Skills</h2>
-        <p>Sport, gaming, plugg, livet – Hugo maxar allt på första försöket.</p>
+        <div class="lift">Knäböj</div>
+        <div class="weight">360 kg</div>
     </div>
 
-    <button onclick="hyllaHugo()">Hylla Hugo</button>
-</section>
+    <div class="card">
+        <div class="lift">Axelpress</div>
+        <div class="weight">190 kg</div>
+    </div>
 
-<footer>
-    © 2026 Officiella Hugo Ryberg Fanclubben
-</footer>
+</div>
 
-<script>
-    function hyllaHugo() {
-        alert("HUGO ÄR BÄST I VÄRLDEN! 🔥");
-    }
-</script>
+<a href="index.html">⬅ Tillbaka till startsidan</a>
 
 </body>
 </html>
+
