@@ -6,7 +6,7 @@
 <title>Hugo Ryberg – Legenden</title>
 
 <style>
-/* ================= BODY & SMOOTH ANIMATED BACKGROUND ================= */
+/* ================= BODY & SMOOTH FADE GRADIENT ================= */
 body, html {
     margin: 0;
     padding: 0;
@@ -15,16 +15,17 @@ body, html {
     overflow-x: hidden;
     color: white;
     text-align: center;
-    /* Bakgrund med smooth färgblandning */
-    background: linear-gradient(45deg, #00ffe0, #5d00ff, #ff33cc, #ffdd00);
+
+    /* Smooth multi-color gradient */
+    background: linear-gradient(-45deg, #00ffe0, #5d00ff, #ff33cc, #ffdd00);
     background-size: 400% 400%;
-    animation: gradientFlow 30s ease infinite;
+    animation: gradientFade 30s ease infinite;
 }
 
-@keyframes gradientFlow {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+@keyframes gradientFade {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* ================= HEADER ================= */
@@ -162,4 +163,3 @@ footer {
 
 </body>
 </html>
-
