@@ -1,10 +1,12 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hugo Ryberg Universe 💎</title>
+
 <style>
+/* ================= BAS ================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -40,6 +42,7 @@ header p {
     margin: 50px 20px;
 }
 
+/* LYXLIGA KORT */
 .card {
     background: linear-gradient(145deg, #111, #1b1b1b);
     border-radius: 25px;
@@ -53,9 +56,11 @@ header p {
     border: 2px solid gold;
 }
 
+/* HOVER PULS & GLOW */
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 35px gold, 0 0 50px silver;
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 50px gold, 0 0 70px silver;
+    transition: 0.4s;
 }
 
 .card h2 {
@@ -71,68 +76,129 @@ header p {
     opacity: 0.8;
 }
 
-/* LYXGLITTER */
-.sparkle {
+/* ================= FADE-IN ANIMATION ================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= GLITTER, DIAMANTER & GULDTACKOR ================= */
+.sparkle, .diamond, .goldbar {
     position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.sparkle {
     width: 5px;
     height: 5px;
     background: white;
-    border-radius: 50%;
-    opacity: 0.7;
     animation: float 12s linear infinite;
+}
+
+.diamond {
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(45deg, white, #00ffff);
+    transform: rotate(45deg);
+    animation: float 18s linear infinite;
+}
+
+.goldbar {
+    width: 40px;
+    height: 16px;
+    background: linear-gradient(90deg, #ffd700, #ffb700);
+    border-radius: 4px;
+    box-shadow: 0 0 10px gold;
+    animation: float 25s linear infinite;
 }
 
 @keyframes float {
     from { transform: translateY(0); }
-    to { transform: translateY(-120vh); }
+    to { transform: translateY(-130vh); }
 }
-
 </style>
 </head>
+
 <body>
 
-<!-- Glitter i bakgrunden -->
+<!-- ================= GLITTER & LYXBJUDNING ================= -->
 <div class="sparkle" style="left:10%; animation-delay:0s;"></div>
 <div class="sparkle" style="left:30%; animation-delay:2s;"></div>
 <div class="sparkle" style="left:50%; animation-delay:4s;"></div>
 <div class="sparkle" style="left:70%; animation-delay:1s;"></div>
 <div class="sparkle" style="left:90%; animation-delay:3s;"></div>
 
+<div class="diamond" style="left:20%; animation-delay:1s;"></div>
+<div class="diamond" style="left:65%; animation-delay:5s;"></div>
+<div class="diamond" style="left:85%; animation-delay:3s;"></div>
+
+<div class="goldbar" style="left:15%; animation-delay:0s;"></div>
+<div class="goldbar" style="left:40%; animation-delay:6s;"></div>
+<div class="goldbar" style="left:75%; animation-delay:3s;"></div>
+
+<!-- ================= HEADER ================= -->
 <header>
     <h1>Hugo Ryberg 💎</h1>
     <p>Välkommen till det ultimata Hugo-universumet</p>
 </header>
 
+<!-- ================= MAIN CARDS ================= -->
 <div class="main">
-    <a href="styrka.html" class="card">
+    <a href="styrka.html" class="card fade-in">
         <h2>🏋️ Styrka</h2>
         <p>Otroliga gymrekord bortom fantasin</p>
     </a>
 
-    <a href="skills.html" class="card">
+    <a href="skills.html" class="card fade-in">
         <h2>🧠 Skills</h2>
         <p>Hugos smarta och övermänskliga förmågor</p>
     </a>
 
-    <a href="meriter.html" class="card">
+    <a href="meriter.html" class="card fade-in">
         <h2>🏆 Meriter</h2>
         <p>Rekord och guldmedaljer i alla världar</p>
     </a>
 
-    <a href="berattelse.html" class="card">
+    <a href="berattelse.html" class="card fade-in">
         <h2>📖 Berättelse</h2>
         <p>Hugo Rybergs legend – läs hela storyn</p>
     </a>
 
-    <a href="casper.html" class="card">
+    <a href="casper.html" class="card fade-in">
         <h2>🤵 Assistenten Casper</h2>
     </a>
 
-    <a href="spel.html" class="card">
+    <a href="spel.html" class="card fade-in">
         <h2>🎮 Mini-spel</h2>
         <p>Fånga guldtackor och diamanter!</p>
     </a>
 </div>
 
+<!-- ================= FADE-IN SCRIPT ================= -->
+<script>
+// FADE-IN VID SCROLL
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
+
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
 </body>
 </html>
+
