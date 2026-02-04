@@ -1,74 +1,207 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Casper Lindén – Assistenten</title>
 
-.
+<style>
+
+/* ================= BAS ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #eaeaea;
+    background: radial-gradient(circle at top, #0a0a0a, #111);
+    overflow-x: hidden;
+    line-height: 1.8;
+}
+
+/* ================= HEADER ================= */
+header {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+header h1 {
+    font-size: 60px;
+    background: linear-gradient(90deg, silver, white, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px silver;
+}
+
+header p {
+    opacity: 0.9;
+}
+
+/* ================= CASPER BOX ================= */
+.casper-box {
+    max-width: 900px;
+    margin: 40px auto 80px auto;
+    padding: 50px;
+    background: linear-gradient(145deg, #111, #1b1b1b);
+    border-radius: 30px;
+    border: 2px solid silver;
+    box-shadow: 0 0 40px silver, 0 0 80px rgba(255,255,255,0.05);
+}
+
+/* ================= STORY ================= */
+.story {
+    max-width: 750px;
+    margin: 30px auto;
+    font-size: 18px;
+    line-height: 1.9;
+    color: #eaeaea;
+}
+
+.story h2 {
+    text-align: center;
+    color: silver;
+    margin-top: 40px;
+    font-size: 28px;
+}
+
+.story p {
+    margin-bottom: 18px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.story p:hover {
+    color: white;
+    text-shadow: 0 0 12px silver;
+}
+
+/* divider */
+.divider {
+    height: 2px;
+    width: 120px;
+    background: linear-gradient(90deg, transparent, silver, transparent);
+    margin: 35px auto;
+}
+
+/* ================= TILLBAKA ================= */
+.back {
+    display: block;
+    text-align: center;
+    width: 260px;
+    margin: 60px auto 0 auto;
+    padding: 15px;
+
+    border: 2px solid silver;
+    border-radius: 15px;
+
+    color: silver;
+    text-decoration: none;
+
+    box-shadow: 0 0 20px silver;
+    transition: 0.3s;
+}
+
+.back:hover {
+    background: silver;
+    color: black;
+}
+
+/* ================= LYXBJUDNING BAKGRUND ================= */
+
+/* glitter */
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: float 12s linear infinite;
+}
+
+/* diamanter */
+.diamond {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(45deg, white, #00ffff);
+    transform: rotate(45deg);
+    opacity: 0.7;
+    animation: float 18s linear infinite;
+}
+
+/* guldtackor */
+.goldbar {
+    position: absolute;
+    width: 40px;
+    height: 16px;
+    background: linear-gradient(90deg, #ffd700, #ffb700);
+    border-radius: 4px;
+    box-shadow: 0 0 10px gold;
+    opacity: 0.5;
+    animation: float 25s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-130vh); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= GLITTER + DIAMANTER + GULDTACKOR ================= -->
+<div class="sparkle" style="left:10%; animation-delay:0s;"></div>
+<div class="sparkle" style="left:30%; animation-delay:3s;"></div>
+<div class="sparkle" style="left:60%; animation-delay:5s;"></div>
+<div class="sparkle" style="left:85%; animation-delay:1s;"></div>
+
+<div class="diamond" style="left:20%; animation-delay:1s;"></div>
+<div class="diamond" style="left:65%; animation-delay:5s;"></div>
+<div class="diamond" style="left:85%; animation-delay:3s;"></div>
+
+<div class="goldbar" style="left:15%; animation-delay:0s;"></div>
+<div class="goldbar" style="left:40%; animation-delay:6s;"></div>
+<div class="goldbar" style="left:75%; animation-delay:3s;"></div>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <h1>🤵 Casper Lindén</h1>
+    <p>Assistent. Partner. Legendarisk sidekick.</p>
+</header>
+
+<!-- ================= CASPER BOX ================= -->
+<div class="casper-box">
 
 <h2>Berättelsen om Casper Lindén</h2>
 
 <div class="story">
 
-<p>
-Natten var kall och stadens ljus reflekterades i glas och stål.
-Himlen var tyst. För tyst.
-</p>
+<p>Natten var kall och stadens ljus reflekterades i glas och stål. Himlen var tyst. För tyst.</p>
 
-<p>
-Plötsligt bröts lugnet av kaos.
-Ett forskningslabb hade tappat kontrollen över sin egen teknik,
-och mitt i allt stod en ensam man – Casper Lindén.
-</p>
+<p>Plötsligt bröts lugnet av kaos. Ett forskningslabb hade tappat kontrollen över sin egen teknik, och mitt i allt stod en ensam man – Casper Lindén.</p>
 
-<p>
-Systemen kraschade.
-Larm tjöt.
-Utvägarna stängdes en efter en.
-</p>
+<p>Systemen kraschade. Larm tjöt. Utvägarna stängdes en efter en.</p>
 
-<p>
-När allt såg hopplöst ut skakade marken.
-Dörrarna slets upp som papper.
-Och genom röken klev Hugo Ryberg in.
-</p>
+<p>När allt såg hopplöst ut skakade marken. Dörrarna slets upp som papper. Och genom röken klev Hugo Ryberg in.</p>
 
-<p>
-Med ren styrka lyfte han undan flera ton metall,
-stoppade explosionen med sekunder till godo
-och drog ut Casper i säkerhet innan hela byggnaden kollapsade bakom dem.
-</p>
+<p>Med ren styrka lyfte han undan flera ton metall, stoppade explosionen med sekunder till godo och drog ut Casper i säkerhet innan hela byggnaden kollapsade bakom dem.</p>
 
-<p>
-Casper stirrade chockat upp.
-Inte rädd. Bara imponerad.
-Som om han redan visste att detta ögonblick skulle förändra allt.
-</p>
+<p>Casper stirrade chockat upp. Inte rädd. Bara imponerad. Som om han redan visste att detta ögonblick skulle förändra allt.</p>
 
-<p>
-Efteråt pratade de i gryningen,
-sittandes på taket ovanför staden.
-Hugo insåg snabbt att Casper Lindén inte bara var en överlevare —
-han var ett strategiskt geni.
-</p>
+<p>Efteråt pratade de i gryningen, sittandes på taket ovanför staden. Hugo insåg snabbt att Casper Lindén inte bara var en överlevare — han var ett strategiskt geni.</p>
 
-<p>
-En hjärna som kunde planera det ingen annan såg.
-En person som alltid låg tio steg före världen.
-</p>
+<p>En hjärna som kunde planera det ingen annan såg. En person som alltid låg tio steg före världen.</p>
 
-<p>
-Så Hugo log och sa:
-"Jag räddar världen. Men jag behöver någon som styr den bakom kulisserna."
-</p>
+<p>Så Hugo log och sa: "Jag räddar världen. Men jag behöver någon som styr den bakom kulisserna." </p>
 
-<p>
-"Säg ja, så bygger vi något legendariskt."
-</p>
-
-<p>
-Och där, medan solen gick upp över staden,
-fick Casper Lindén sitt jobb.
-Inte som assistent.
-Utan som partner till en legend.
-</p>
+<p>Och där, medan solen gick upp över staden, fick Casper Lindén sitt jobb. Inte som assistent. Utan som partner till en legend.</p>
 
 </div>
 
 <a href="index.html" class="back">← Tillbaka till startsidan</a>
 
+</div>
+
+</body>
+</html>
