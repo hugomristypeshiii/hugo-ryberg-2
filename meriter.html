@@ -1,116 +1,195 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8" />
-    <title>Hugos Meriter</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hugo Ryberg – Meriter</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #140f1f, #1f1630);
-            color: white;
-            text-align: center;
-        }
+<style>
 
-        h1 {
-            padding: 50px 20px 20px;
-            font-size: 48px;
-        }
+/* ================= BAS ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: radial-gradient(circle at top, #141414, #000);
+    overflow-x: hidden;
+    line-height: 1.8;
+}
 
-        .subtitle {
-            opacity: 0.8;
-            margin-bottom: 40px;
-        }
+/* ================= HEADER ================= */
+header {
+    text-align: center;
+    padding: 70px 20px;
+}
 
-        .container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            padding: 20px;
-        }
+header h1 {
+    font-size: 60px;
+    background: linear-gradient(90deg, gold, silver, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px gold, 0 0 40px silver;
+}
 
-        .card {
-            background: #261f3b;
-            width: 280px;
-            padding: 28px;
-            border-radius: 18px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-            transition: 0.25s;
-        }
+/* ================= STOR LYXLÅDA ================= */
+.merit-box {
+    max-width: 900px;
+    margin: 40px auto 80px auto;
+    padding: 50px;
 
-        .card:hover {
-            transform: scale(1.07);
-        }
+    background: linear-gradient(145deg, #111, #1b1b1b);
+    border-radius: 30px;
 
-        .title {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
+    border: 2px solid gold;
+    box-shadow:
+        0 0 40px gold,
+        0 0 80px rgba(255,255,255,0.05);
+}
 
-        .desc {
-            font-size: 18px;
-            font-weight: bold;
-            color: #c084ff;
-        }
+/* rubriker */
+h2 {
+    color: gold;
+    text-align: center;
+    margin-top: 45px;
+}
 
-        a {
-            display: inline-block;
-            margin: 50px 0;
-            padding: 12px 25px;
-            background: #c084ff;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-        }
+p {
+    max-width: 650px;
+    margin: 12px auto;
+    text-align: center;
+}
 
-        a:hover {
-            background: #d8aaff;
-        }
-    </style>
+/* divider */
+.divider {
+    height: 2px;
+    width: 120px;
+    background: linear-gradient(90deg, transparent, gold, transparent);
+    margin: 35px auto;
+}
+
+/* ================= TILLBAKA ================= */
+.back {
+    display: block;
+    text-align: center;
+    width: 260px;
+    margin: 60px auto 0 auto;
+    padding: 15px;
+
+    border: 2px solid silver;
+    border-radius: 15px;
+
+    color: silver;
+    text-decoration: none;
+
+    box-shadow: 0 0 20px silver;
+    transition: 0.3s;
+}
+
+.back:hover {
+    background: silver;
+    color: black;
+}
+
+/* ================= BAKGRUNDSLYX ================= */
+
+/* ✨ glitter */
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: float 12s linear infinite;
+}
+
+/* 💎 diamanter */
+.diamond {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(45deg, white, #00ffff);
+    transform: rotate(45deg);
+    opacity: 0.7;
+    animation: float 18s linear infinite;
+}
+
+/* 💰 guldtackor */
+.goldbar {
+    position: absolute;
+    width: 40px;
+    height: 16px;
+    background: linear-gradient(90deg, #ffd700, #ffb700);
+    border-radius: 4px;
+    box-shadow: 0 0 10px gold;
+    opacity: 0.5;
+    animation: float 25s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-130vh); }
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>🏆 Hugos Meriter</h1>
-<p class="subtitle">Global legend. Huvudkaraktärsenergi 24/7.</p>
+<!-- ===== MASSOR AV LYXELEMENT ===== -->
 
-<div class="container">
+<!-- glitter -->
+<div class="sparkle" style="left:10%; animation-delay:0s;"></div>
+<div class="sparkle" style="left:30%; animation-delay:2s;"></div>
+<div class="sparkle" style="left:55%; animation-delay:4s;"></div>
+<div class="sparkle" style="left:80%; animation-delay:1s;"></div>
 
-    <div class="card">
-        <div class="title">Världsmästare</div>
-        <div class="desc">VM-guld i 5 olika sporter</div>
-    </div>
+<!-- diamanter -->
+<div class="diamond" style="left:20%; animation-delay:1s;"></div>
+<div class="diamond" style="left:65%; animation-delay:5s;"></div>
+<div class="diamond" style="left:85%; animation-delay:3s;"></div>
 
-    <div class="card">
-        <div class="title">Språk</div>
-        <div class="desc">Flytande i alla världens språk</div>
-    </div>
+<!-- guldtackor -->
+<div class="goldbar" style="left:15%; animation-delay:0s;"></div>
+<div class="goldbar" style="left:40%; animation-delay:6s;"></div>
+<div class="goldbar" style="left:75%; animation-delay:3s;"></div>
 
-    <div class="card">
-        <div class="title">Gymstatus</div>
-        <div class="desc">Personalen ber om autograf</div>
-    </div>
 
-    <div class="card">
-        <div class="title">Kodning</div>
-        <div class="desc">Byggde en app på lunchrasten</div>
-    </div>
+<header>
+    <h1>🏆 Hugo Ryberg – Meriter</h1>
+</header>
 
-    <div class="card">
-        <div class="title">Mentalt fokus</div>
-        <div class="desc">Pluggar 8h och blir piggare</div>
-    </div>
 
-    <div class="card">
-        <div class="title">Legend-status</div>
-        <div class="desc">ses som en hjälte</div>
-    </div>
+<!-- ================= INNEHÅLL ================= -->
+<div class="merit-box">
+
+<h2>Världsmästare</h2>
+<p>VM-guld i 5 olika sporter – samma år.</p>
+
+<div class="divider"></div>
+
+<h2>Språkgeni</h2>
+<p>Flytande i alla världens språk. Även framtida språk som inte uppfunnits ännu.</p>
+
+<div class="divider"></div>
+
+<h2>IQ-rekord</h2>
+<p>Testet tog slut innan Hugos intelligens gjorde det.</p>
+
+<div class="divider"></div>
+
+<h2>Global påverkan</h2>
+<p>Räddat städer, länder och ibland hela planeter – före lunch.</p>
+
+<div class="divider"></div>
+
+<h2>Legendstatus</h2>
+<p>Enda personen i historien med titeln: "Bäst på exakt allt".</p>
+
+<a href="index.html" class="back">← Tillbaka till startsidan</a>
 
 </div>
 
-<a href="index.html">⬅ Tillbaka</a>
-
 </body>
 </html>
+
