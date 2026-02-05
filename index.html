@@ -3,157 +3,131 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hugo Ryberg 👑</title>
+<title>Hugo Ryberg</title>
 
 <style>
 
 /* ================= BAS ================= */
 body{
     margin:0;
-    font-family: Arial, sans-serif;
-    color:white;
-    overflow-x:hidden;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color:#f5f5f5;
 
-    /* Mjuk fade mellan färger (inte linje) */
+    /* NYA färger – marin + champagne */
     background:
-        radial-gradient(circle at 20% 10%, rgba(255,215,0,0.25), transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(0,255,255,0.15), transparent 40%),
-        radial-gradient(circle at 50% 50%, #0b0b0b, #000);
+        radial-gradient(circle at top left, #1b2330, transparent 60%),
+        radial-gradient(circle at bottom right, #11161f, transparent 60%),
+        #0b0f14;
+
+    overflow-x:hidden;
 }
 
-/* ================= HERO ================= */
-.hero{
+/* ================= HEADER ================= */
+header{
     text-align:center;
-    padding:130px 20px 70px;
+    padding:120px 20px 80px;
 }
 
-.hero h1{
-    font-size:78px;
-    margin:0;
+header h1{
+    font-size:72px;
+    letter-spacing:4px;
 
-    background: linear-gradient(90deg,gold,silver,#00ffff,gold);
+    background: linear-gradient(90deg,#f8e7b5,#d4af37,#ffffff);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
-    text-shadow:
-        0 0 25px gold,
-        0 0 50px gold,
-        0 0 80px #00ffff;
+    text-shadow:0 0 30px rgba(212,175,55,0.6);
 }
 
-.hero p{
-    margin-top:20px;
-    opacity:0.9;
-    font-size:20px;
+header p{
+    opacity:0.75;
+    font-size:18px;
+    margin-top:18px;
 }
 
-/* ================= MAIN PANEL ================= */
-.panel{
-    max-width:1200px;
-    margin:0 auto 100px;
-    padding:50px;
-
-    background: rgba(20,20,20,0.7);
-    backdrop-filter: blur(18px);
-
-    border-radius:30px;
-    border:1px solid rgba(255,215,0,0.35);
-
-    box-shadow:
-        0 0 40px rgba(255,215,0,0.25),
-        inset 0 0 40px rgba(255,255,255,0.05);
+/* ================= NAV GRID ================= */
+.wrapper{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px 100px;
 }
 
-/* ================= GRID ================= */
+/* LYX GRID (ren & jämn) */
 .grid{
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap:28px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap:30px;
 }
 
-/* ================= GLOW CARDS ================= */
+/* ================= PREMIUM CARDS ================= */
 .card{
     text-decoration:none;
     color:white;
-    padding:35px 25px;
-    border-radius:20px;
 
-    background: linear-gradient(145deg,#151515,#1e1e1e);
+    padding:45px 30px;
+    border-radius:16px;
 
-    border:1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(145deg,#141a22,#1c2430);
+
+    border:1px solid rgba(255,255,255,0.05);
 
     box-shadow:
-        0 0 15px rgba(255,255,255,0.05);
+        0 15px 40px rgba(0,0,0,0.6);
 
     transition:0.35s;
-    position:relative;
 }
 
+/* HOVER = guldig glow */
 .card:hover{
-    transform:translateY(-10px) scale(1.04);
+    transform:translateY(-6px);
 
-    border-color: gold;
+    border:1px solid #d4af37;
 
     box-shadow:
-        0 0 25px gold,
-        0 0 50px gold,
-        0 0 80px rgba(0,255,255,0.5);
+        0 0 25px rgba(212,175,55,0.6),
+        0 20px 60px rgba(0,0,0,0.8);
 }
 
 .card h2{
-    margin:0 0 10px;
-    color:gold;
+    margin:0 0 12px;
+    font-size:22px;
+    color:#f8e7b5;
 }
 
 .card p{
-    opacity:0.85;
     font-size:14px;
+    opacity:0.75;
 }
 
 /* ================= FOOTER ================= */
-.footer{
+footer{
     text-align:center;
-    padding:80px 20px;
+    padding:70px 20px;
+    border-top:1px solid rgba(212,175,55,0.25);
 }
 
-.footer-box{
+footer .box{
     display:inline-block;
-    padding:30px 50px;
+    padding:30px 60px;
+    border-radius:14px;
 
-    border-radius:20px;
+    background:#141a22;
 
-    background: linear-gradient(145deg,#151515,#202020);
+    border:1px solid #d4af37;
 
-    border:1px solid gold;
-
-    box-shadow:0 0 40px gold;
+    box-shadow:0 0 25px rgba(212,175,55,0.4);
 }
 
-/* ================= LYX PARTIKLAR ================= */
-.sparkle,.diamond,.goldbar{
+/* ================= SUBTLE LUX PARTICLES ================= */
+.dot{
     position:fixed;
-    opacity:0.35;
-    pointer-events:none;
-    z-index:-1;
-}
-
-.sparkle{
-    width:4px;height:4px;background:white;border-radius:50%;
-    animation:float 10s linear infinite;
-}
-
-.diamond{
-    width:14px;height:14px;
-    background:linear-gradient(45deg,white,#00ffff);
-    transform:rotate(45deg);
+    width:3px;
+    height:3px;
+    background:#d4af37;
+    opacity:0.3;
+    border-radius:50%;
     animation:float 18s linear infinite;
-}
-
-.goldbar{
-    width:42px;height:14px;
-    background:linear-gradient(90deg,#ffd700,#ffb700);
-    border-radius:4px;
-    animation:float 25s linear infinite;
+    z-index:-1;
 }
 
 @keyframes float{
@@ -164,8 +138,8 @@ body{
 /* ================= FADE ================= */
 .fade{
     opacity:0;
-    transform:translateY(25px);
-    transition:1s;
+    transform:translateY(20px);
+    transition:0.8s;
 }
 
 .fade.show{
@@ -178,81 +152,78 @@ body{
 
 <body>
 
-<!-- Bakgrundslyx -->
-<div class="sparkle" style="left:5%"></div>
-<div class="sparkle" style="left:40%"></div>
-<div class="sparkle" style="left:80%"></div>
-<div class="diamond" style="left:25%"></div>
-<div class="diamond" style="left:70%"></div>
-<div class="goldbar" style="left:50%"></div>
+<!-- subtil lyx bakgrund -->
+<div class="dot" style="left:10%"></div>
+<div class="dot" style="left:40%"></div>
+<div class="dot" style="left:70%"></div>
+<div class="dot" style="left:85%"></div>
 
-<!-- HERO -->
-<section class="hero fade">
-    <h1>Hugo Ryberg</h1>
-    <p>Styrka • Intelligens • Imperium • Legenden</p>
-</section>
+<!-- HEADER -->
+<header class="fade">
+    <h1>HUGO RYBERG</h1>
+    <p>Styrka • Intelligens • Imperium • Lyx</p>
+</header>
 
-<!-- MAIN PANEL -->
-<section class="panel fade">
-
+<!-- GRID -->
+<div class="wrapper fade">
     <div class="grid">
 
         <a href="styrka.html" class="card">
-            <h2>💪 Styrka</h2>
-            <p>Gymrekord och brutala lyft</p>
+            <h2>Styrka</h2>
+            <p>Gymrekord och extrema lyft</p>
         </a>
 
         <a href="skills.html" class="card">
-            <h2>🧠 Skills</h2>
-            <p>IQ, språk och mentala superkrafter</p>
+            <h2>Skills</h2>
+            <p>Språk, IQ och mentala superkrafter</p>
         </a>
 
         <a href="meriter.html" class="card">
-            <h2>🏆 Meriter</h2>
-            <p>Ofattbara prestationer & rikedom</p>
+            <h2>Meriter</h2>
+            <p>Otroliga prestationer & rikedomar</p>
         </a>
 
         <a href="berattelse.html" class="card">
-            <h2>📖 Berättelse</h2>
-            <p>Hjälte-sagan</p>
+            <h2>Berättelse</h2>
+            <p>Hjältesagan</p>
         </a>
 
         <a href="min-kamp.html" class="card">
-            <h2>👑 Min Kamp</h2>
-            <p>Skurk-arc & världsherravälde</p>
+            <h2>Min Kamp</h2>
+            <p>Från hjälte till härskare</p>
         </a>
 
         <a href="casper.html" class="card">
-            <h2>🤵 Casper Lindén</h2>
+            <h2>Casper Lindén</h2>
             <p>Assistentens historia</p>
         </a>
 
         <a href="quiz.html" class="card">
-            <h2>🎮 Quiz</h2>
-            <p>Bevisa att du är värdig</p>
+            <h2>Quiz</h2>
+            <p>Testa din värdighet</p>
         </a>
 
         <a href="stillwater.html" class="card">
-            <h2>💧 Stillwater</h2>
-            <p>Miljardföretaget som räddar världen</p>
+            <h2>Stillwater</h2>
+            <p>Vattenimperiet värt miljarder</p>
         </a>
 
     </div>
-</section>
+</div>
 
 <!-- FOOTER -->
-<section class="footer fade">
-    <div class="footer-box">
-        <h2>Köp min kurs</h2>
+<footer class="fade">
+    <div class="box">
+        <h3>Köp min kurs</h3>
         <p>Pris: 50 000 KR</p>
         <p>Kontakta assistent: Casper Lindén</p>
     </div>
-</section>
+</footer>
 
 <script>
 const f=document.querySelectorAll('.fade');
 const o=new IntersectionObserver(e=>{
-  e.forEach(x=>{ if(x.isIntersecting) x.target.classList.add('show');});
+ e.forEach(x=>{ if(x.isIntersecting) x.target.classList.add('show');});
 });
 f.forEach(el=>o.observe(el));
 </script>
