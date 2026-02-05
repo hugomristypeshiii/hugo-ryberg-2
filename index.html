@@ -1,112 +1,126 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hugo Ryberg Universe 💎</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hugo Ryberg 👑</title>
 
 <style>
 /* ================= BAS ================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #0a0a0a, #111);
     color: white;
+    background: radial-gradient(circle at top, #0a0a0a, #111, #000);
     overflow-x: hidden;
 }
 
-/* HEADER */
-header {
+/* ================= HERO ================= */
+.hero {
     text-align: center;
-    padding: 70px 20px;
+    padding: 110px 20px 90px;
 }
 
-header h1 {
-    font-size: 60px;
+.hero h1 {
+    font-size: 64px;
+    margin: 0;
     background: linear-gradient(90deg, gold, silver, #00ffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 15px gold, 0 0 25px silver;
+    text-shadow: 0 0 30px gold;
 }
 
-header p {
-    opacity: 0.9;
+.hero p {
+    opacity: 0.85;
+    margin-top: 15px;
+    font-size: 18px;
 }
 
-/* MAIN CARDS */
-.main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 50px 20px;
+/* ================= SEKTIONER ================= */
+.section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 25px;
 }
 
-/* LYXLIGA KORT */
-.card {
-    background: linear-gradient(145deg, #111, #1b1b1b);
-    border-radius: 25px;
-    padding: 30px 40px;
-    width: 220px;
+.section h2 {
     text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: gold;
+}
+
+/* ================= GRID ================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+/* ================= CARDS ================= */
+.card {
     text-decoration: none;
     color: white;
-    box-shadow: 0 0 25px silver;
-    transition: 0.3s;
-    border: 2px solid gold;
+    background: linear-gradient(145deg, #141414, #1c1c1c);
+    padding: 35px 25px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,215,0,0.25);
+    box-shadow: 0 0 25px rgba(255,215,0,0.08);
+    transition: 0.35s;
 }
 
-/* HOVER PULS & GLOW */
 .card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 0 50px gold, 0 0 70px silver;
-    transition: 0.4s;
+    transform: translateY(-8px);
+    border-color: gold;
+    box-shadow: 0 0 40px gold;
 }
 
-.card h2 {
-    font-size: 24px;
-    background: linear-gradient(90deg, gold, silver);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
+.card h3 {
+    margin-top: 0;
+    font-size: 22px;
+    color: gold;
 }
 
 .card p {
-    font-size: 16px;
     opacity: 0.8;
+    font-size: 14px;
 }
 
-/* ================= FADE-IN ANIMATION ================= */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease-out;
+/* ================= FOOTER ================= */
+.footer {
+    text-align: center;
+    padding: 70px 20px;
+    margin-top: 100px;
+    border-top: 1px solid rgba(255,215,0,0.2);
 }
 
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+.footer h3 {
+    color: gold;
 }
 
-/* ================= GLITTER, DIAMANTER & GULDTACKOR ================= */
+.footer p {
+    opacity: 0.85;
+}
+
+/* ================= LYX PARTIKLAR ================= */
 .sparkle, .diamond, .goldbar {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.7;
-    z-index: 0;
+    position: fixed;
+    opacity: 0.4;
     pointer-events: none;
+    z-index: -1;
 }
 
 .sparkle {
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     background: white;
+    border-radius: 50%;
     animation: float 12s linear infinite;
 }
 
 .diamond {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background: linear-gradient(45deg, white, #00ffff);
     transform: rotate(45deg);
     animation: float 18s linear infinite;
@@ -114,112 +128,111 @@ header p {
 
 .goldbar {
     width: 40px;
-    height: 16px;
+    height: 14px;
     background: linear-gradient(90deg, #ffd700, #ffb700);
     border-radius: 4px;
-    box-shadow: 0 0 10px gold;
     animation: float 25s linear infinite;
 }
 
 @keyframes float {
-    from { transform: translateY(0); }
-    to { transform: translateY(-130vh); }
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-120vh); }
+}
+
+/* ================= FADE ================= */
+.fade {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: 0.8s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= GLITTER & LYXBJUDNING ================= -->
-<div class="sparkle" style="left:10%; animation-delay:0s;"></div>
-<div class="sparkle" style="left:30%; animation-delay:2s;"></div>
-<div class="sparkle" style="left:50%; animation-delay:4s;"></div>
-<div class="sparkle" style="left:70%; animation-delay:1s;"></div>
-<div class="sparkle" style="left:90%; animation-delay:3s;"></div>
+<!-- LYX BAKGRUND -->
+<div class="sparkle" style="left:10%"></div>
+<div class="sparkle" style="left:80%"></div>
+<div class="diamond" style="left:30%"></div>
+<div class="diamond" style="left:60%"></div>
+<div class="goldbar" style="left:45%"></div>
 
-<div class="diamond" style="left:20%; animation-delay:1s;"></div>
-<div class="diamond" style="left:65%; animation-delay:5s;"></div>
-<div class="diamond" style="left:85%; animation-delay:3s;"></div>
+<!-- ================= HERO ================= -->
+<section class="hero fade">
+    <h1>Hugo Ryberg</h1>
+    <p>Styrka • Intelligens • Meriter • Legenden</p>
+</section>
 
-<div class="goldbar" style="left:15%; animation-delay:0s;"></div>
-<div class="goldbar" style="left:40%; animation-delay:6s;"></div>
-<div class="goldbar" style="left:75%; animation-delay:3s;"></div>
+<!-- ================= HUVUDSEKTION ================= -->
+<section class="section fade">
+    <h2>Utforska Imperiet</h2>
 
-<!-- ================= HEADER ================= -->
-<header>
-    <h1>Hugo Ryberg 💎</h1>
-    <p>Välkommen till det ultimata Hugo-universumet</p>
-</header>
+    <div class="grid">
 
-<!-- ================= MAIN CARDS ================= -->
-<div class="main">
-    <a href="styrka.html" class="card fade-in">
-        <h2>🏋️ Styrka</h2>
-        <p>Otroliga gymrekord bortom fantasin</p>
-    </a>
+        <a href="styrka.html" class="card">
+            <h3>💪 Styrka</h3>
+            <p>Extrema gymlyft och fysiska rekord</p>
+        </a>
 
-    <a href="skills.html" class="card fade-in">
-        <h2>🧠 Skills</h2>
-        <p>Hugos smarta och övermänskliga förmågor</p>
-    </a>
+        <a href="skills.html" class="card">
+            <h3>🧠 Skills</h3>
+            <p>Intelligens, språk och mentala superkrafter</p>
+        </a>
 
-    <a href="meriter.html" class="card fade-in">
-        <h2>🏆 Meriter</h2>
-        <p>Rekord och guldmedaljer i alla världar</p>
-    </a>
+        <a href="meriter.html" class="card">
+            <h3>🏆 Meriter</h3>
+            <p>Otroliga prestationer och rikedomar</p>
+        </a>
 
-    <a href="berattelse.html" class="card fade-in">
-        <h2>📖 Berättelse</h2>
-        <p>Hugo Rybergs legend – läs hela storyn</p>
-    </a>
+        <a href="berattelse.html" class="card">
+            <h3>📖 Berättelse</h3>
+            <p>Hugos resa som hjälte</p>
+        </a>
 
-    <a href="casper.html" class="card fade-in">
-        <h2>🤵 Assistenten Casper</h2>
-    </a>
+        <a href="min-kamp.html" class="card">
+            <h3>👑 Min Kamp</h3>
+            <p>Från hjälte till världshärskare</p>
+        </a>
 
-    <a href="spel.html" class="card fade-in">
-        <h2>🎮 Mini-quiz</h2>
-        <p>Testa dina kunskaper om Hugo!</p>
-    </a>
+        <a href="casper.html" class="card">
+            <h3>🤵 Assistenten Casper</h3>
+            <p>Historien om Casper Lindén</p>
+        </a>
 
-    <a href="stillwater.html" class="card fade-in">
-        <h2>💧 Stillwater</h2>
-        <p>Hugos lyxiga vattenflaskor – miljarder i omsättning!</p>
-    </a>
-    <a href="min-kamp.html" class="card fade-in">
-    <h2>👑 Min Kamp</h2>
-    <p>Hugos resa från hjälte till världshärskare</p>
-</a>
-</div>
+        <a href="quiz.html" class="card">
+            <h3>🎮 Quiz / Spel</h3>
+            <p>Testa om du är värdig imperiet</p>
+        </a>
 
-<!-- ================= FADE-IN SCRIPT ================= -->
+        <a href="stillwater.html" class="card">
+            <h3>💧 Stillwater</h3>
+            <p>Miljardbolaget som renar världens vatten</p>
+        </a>
+
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<section class="footer fade">
+    <h3>Köp min kurs</h3>
+    <p>Pris: 50 000 KR</p>
+    <p>Kontakta assistent: Casper Lindén</p>
+</section>
+
+<!-- ================= FADE SCRIPT ================= -->
 <script>
-// FADE-IN VID SCROLL
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
-
-faders.forEach(fader => appearOnScroll.observe(fader));
-</script>
-
-<!-- ================= LYXIG BAKGRUNDSMUSIK ================= -->
-<audio id="bgMusic" loop autoplay>
-    <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_1f1e4310d1.mp3?filename=epic-cinematic-background-112193.mp3" type="audio/mpeg">
-    Ditt webbläsare stödjer inte ljud.
-</audio>
-
-<script>
-// Låg volym så det inte stör
-const music = document.getElementById('bgMusic');
-music.volume = 0.2; // 20%
+const faders = document.querySelectorAll('.fade');
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+});
+faders.forEach(el=>obs.observe(el));
 </script>
 
 </body>
