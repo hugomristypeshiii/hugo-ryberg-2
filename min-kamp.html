@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Min Kamp 👑 | Hugo Ryberg</title>
+
+<style>
+/* ================= BAS ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #050505, #111);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+header {
+    text-align: center;
+    padding: 80px 20px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 64px;
+    background: linear-gradient(90deg, gold, silver, crimson);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px gold, 0 0 50px crimson;
+}
+
+.subtitle {
+    opacity: 0.85;
+    font-size: 18px;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    padding: 50px;
+    background: linear-gradient(145deg, #111, #1b1b1b);
+    border-radius: 25px;
+    border: 2px solid gold;
+    box-shadow: 0 0 40px gold, 0 0 100px rgba(255,215,0,0.15);
+    position: relative;
+    z-index: 1;
+}
+
+/* TEXT */
+.container p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+/* ================= BOOK CARD ================= */
+.book {
+    margin: 40px auto;
+    padding: 35px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #181818, #222);
+    border: 2px solid silver;
+    box-shadow: 0 0 35px silver;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.book:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 60px gold, 0 0 100px silver;
+}
+
+.book h2 {
+    background: linear-gradient(90deg, gold, silver);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+    display: inline-block;
+    margin: 15px;
+    padding: 14px 28px;
+    border-radius: 14px;
+    border: 2px solid gold;
+    color: gold;
+    text-decoration: none;
+    box-shadow: 0 0 20px gold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: gold;
+    color: black;
+}
+
+/* ================= FADE IN ================= */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= LYX PARTIKLAR ================= */
+.sparkle, .diamond, .goldbar {
+    position: absolute;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sparkle {
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    animation: float 12s linear infinite;
+}
+
+.diamond {
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(45deg, white, #00ffff);
+    transform: rotate(45deg);
+    animation: float 18s linear infinite;
+}
+
+.goldbar {
+    width: 42px;
+    height: 16px;
+    background: linear-gradient(90deg, #ffd700, #ffb700);
+    border-radius: 4px;
+    box-shadow: 0 0 10px gold;
+    animation: float 25s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-130vh); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= BAKGRUNDSEFFEKTER ================= -->
+<div class="sparkle" style="left:10%"></div>
+<div class="sparkle" style="left:45%"></div>
+<div class="sparkle" style="left:80%"></div>
+
+<div class="diamond" style="left:25%"></div>
+<div class="diamond" style="left:70%"></div>
+
+<div class="goldbar" style="left:15%"></div>
+<div class="goldbar" style="left:60%"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="fade">
+    <h1>Min Kamp 👑</h1>
+    <p class="subtitle">Berättelsen om hur Hugo Ryberg slutade vara hjälte – och blev härskare</p>
+</header>
+
+<!-- ================= STORY ================= -->
+<div class="container fade">
+
+<p>
+Hugo Ryberg började som en legend.
+Styrkan, intelligensen och disciplinen gjorde honom större än alla andra.
+Han vann allt. Besegrade allt. Räddade alla.
+</p>
+
+<p>
+Men ju mer han såg av världen,
+desto tydligare blev sanningen.
+Makten låg inte hos folket.
+Den låg i skuggorna.
+Hos dolda organisationer som styrde allt bakom kulisserna.
+</p>
+
+<p>
+Det var då han skrev boken.
+En bok som skulle förändra allt.
+</p>
+
+<!-- BOOK SECTION -->
+<div class="book">
+    <h2>📖 Boken – Min Kamp</h2>
+    <p>
+    En avslöjande bok om makt, manipulation och hur världen egentligen styrs.
+    Miljoner exemplar sålda. Förbjuden i flera länder.
+    Kallad “den farligaste boken som någonsin skrivits”.
+    </p>
+    <a href="#" class="btn">Läs boken</a>
+</div>
+
+<p>
+När boken spreds vaknade folket.
+System började falla.
+Men Hugo förändrades också.
+Han insåg att världen inte kunde räddas med godhet.
+Den behövde styrka.
+Kontroll.
+Dominans.
+</p>
+
+<p>
+Så han byggde sitt imperium.
+Torn av guld.
+Valv fyllda med diamanter.
+Teknologi före sin tid.
+Resurser större än hela nationer.
+</p>
+
+<p>
+Till slut stod han ensam på toppen.
+Inte som hjälte.
+Inte som symbol.
+Utan som den enda personen stark nog att styra världen.
+</p>
+
+<p>
+Och världen lydde.
+</p>
+
+<a href="index.html" class="btn">← Tillbaka till startsidan</a>
+
+</div>
+
+<!-- ================= FADE SCRIPT ================= -->
+<script>
+const fades = document.querySelectorAll('.fade');
+
+const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('show');
+    });
+});
+
+fades.forEach(f=>obs.observe(f));
+</script>
+
+</body>
+</html>
