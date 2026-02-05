@@ -6,233 +6,255 @@
 <title>Hugo Ryberg 👑</title>
 
 <style>
+
 /* ================= BAS ================= */
-body {
-    margin: 0;
+body{
+    margin:0;
     font-family: Arial, sans-serif;
-    color: white;
-    background: radial-gradient(circle at top, #0a0a0a, #111, #000);
-    overflow-x: hidden;
+    color:white;
+    overflow-x:hidden;
+
+    /* Mjuk fade mellan färger (inte linje) */
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255,215,0,0.25), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0,255,255,0.15), transparent 40%),
+        radial-gradient(circle at 50% 50%, #0b0b0b, #000);
 }
 
 /* ================= HERO ================= */
-.hero {
-    text-align: center;
-    padding: 110px 20px 90px;
+.hero{
+    text-align:center;
+    padding:130px 20px 70px;
 }
 
-.hero h1 {
-    font-size: 64px;
-    margin: 0;
-    background: linear-gradient(90deg, gold, silver, #00ffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px gold;
+.hero h1{
+    font-size:78px;
+    margin:0;
+
+    background: linear-gradient(90deg,gold,silver,#00ffff,gold);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 0 25px gold,
+        0 0 50px gold,
+        0 0 80px #00ffff;
 }
 
-.hero p {
-    opacity: 0.85;
-    margin-top: 15px;
-    font-size: 18px;
+.hero p{
+    margin-top:20px;
+    opacity:0.9;
+    font-size:20px;
 }
 
-/* ================= SEKTIONER ================= */
-.section {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 25px;
-}
+/* ================= MAIN PANEL ================= */
+.panel{
+    max-width:1200px;
+    margin:0 auto 100px;
+    padding:50px;
 
-.section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 32px;
-    color: gold;
+    background: rgba(20,20,20,0.7);
+    backdrop-filter: blur(18px);
+
+    border-radius:30px;
+    border:1px solid rgba(255,215,0,0.35);
+
+    box-shadow:
+        0 0 40px rgba(255,215,0,0.25),
+        inset 0 0 40px rgba(255,255,255,0.05);
 }
 
 /* ================= GRID ================= */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap:28px;
 }
 
-/* ================= CARDS ================= */
-.card {
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(145deg, #141414, #1c1c1c);
-    padding: 35px 25px;
-    border-radius: 22px;
-    border: 1px solid rgba(255,215,0,0.25);
-    box-shadow: 0 0 25px rgba(255,215,0,0.08);
-    transition: 0.35s;
+/* ================= GLOW CARDS ================= */
+.card{
+    text-decoration:none;
+    color:white;
+    padding:35px 25px;
+    border-radius:20px;
+
+    background: linear-gradient(145deg,#151515,#1e1e1e);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.05);
+
+    transition:0.35s;
+    position:relative;
 }
 
-.card:hover {
-    transform: translateY(-8px);
+.card:hover{
+    transform:translateY(-10px) scale(1.04);
+
     border-color: gold;
-    box-shadow: 0 0 40px gold;
+
+    box-shadow:
+        0 0 25px gold,
+        0 0 50px gold,
+        0 0 80px rgba(0,255,255,0.5);
 }
 
-.card h3 {
-    margin-top: 0;
-    font-size: 22px;
-    color: gold;
+.card h2{
+    margin:0 0 10px;
+    color:gold;
 }
 
-.card p {
-    opacity: 0.8;
-    font-size: 14px;
+.card p{
+    opacity:0.85;
+    font-size:14px;
 }
 
 /* ================= FOOTER ================= */
-.footer {
-    text-align: center;
-    padding: 70px 20px;
-    margin-top: 100px;
-    border-top: 1px solid rgba(255,215,0,0.2);
+.footer{
+    text-align:center;
+    padding:80px 20px;
 }
 
-.footer h3 {
-    color: gold;
-}
+.footer-box{
+    display:inline-block;
+    padding:30px 50px;
 
-.footer p {
-    opacity: 0.85;
+    border-radius:20px;
+
+    background: linear-gradient(145deg,#151515,#202020);
+
+    border:1px solid gold;
+
+    box-shadow:0 0 40px gold;
 }
 
 /* ================= LYX PARTIKLAR ================= */
-.sparkle, .diamond, .goldbar {
-    position: fixed;
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: -1;
+.sparkle,.diamond,.goldbar{
+    position:fixed;
+    opacity:0.35;
+    pointer-events:none;
+    z-index:-1;
 }
 
-.sparkle {
-    width: 4px;
-    height: 4px;
-    background: white;
-    border-radius: 50%;
-    animation: float 12s linear infinite;
+.sparkle{
+    width:4px;height:4px;background:white;border-radius:50%;
+    animation:float 10s linear infinite;
 }
 
-.diamond {
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(45deg, white, #00ffff);
-    transform: rotate(45deg);
-    animation: float 18s linear infinite;
+.diamond{
+    width:14px;height:14px;
+    background:linear-gradient(45deg,white,#00ffff);
+    transform:rotate(45deg);
+    animation:float 18s linear infinite;
 }
 
-.goldbar {
-    width: 40px;
-    height: 14px;
-    background: linear-gradient(90deg, #ffd700, #ffb700);
-    border-radius: 4px;
-    animation: float 25s linear infinite;
+.goldbar{
+    width:42px;height:14px;
+    background:linear-gradient(90deg,#ffd700,#ffb700);
+    border-radius:4px;
+    animation:float 25s linear infinite;
 }
 
-@keyframes float {
-    from { transform: translateY(100vh); }
-    to { transform: translateY(-120vh); }
+@keyframes float{
+    from{transform:translateY(110vh);}
+    to{transform:translateY(-120vh);}
 }
 
 /* ================= FADE ================= */
-.fade {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: 0.8s;
+.fade{
+    opacity:0;
+    transform:translateY(25px);
+    transition:1s;
 }
 
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- LYX BAKGRUND -->
-<div class="sparkle" style="left:10%"></div>
+<!-- Bakgrundslyx -->
+<div class="sparkle" style="left:5%"></div>
+<div class="sparkle" style="left:40%"></div>
 <div class="sparkle" style="left:80%"></div>
-<div class="diamond" style="left:30%"></div>
-<div class="diamond" style="left:60%"></div>
-<div class="goldbar" style="left:45%"></div>
+<div class="diamond" style="left:25%"></div>
+<div class="diamond" style="left:70%"></div>
+<div class="goldbar" style="left:50%"></div>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero fade">
     <h1>Hugo Ryberg</h1>
-    <p>Styrka • Intelligens • Meriter • Legenden</p>
+    <p>Styrka • Intelligens • Imperium • Legenden</p>
 </section>
 
-<!-- ================= HUVUDSEKTION ================= -->
-<section class="section fade">
-    <h2>Utforska Imperiet</h2>
+<!-- MAIN PANEL -->
+<section class="panel fade">
 
     <div class="grid">
 
         <a href="styrka.html" class="card">
-            <h3>💪 Styrka</h3>
-            <p>Extrema gymlyft och fysiska rekord</p>
+            <h2>💪 Styrka</h2>
+            <p>Gymrekord och brutala lyft</p>
         </a>
 
         <a href="skills.html" class="card">
-            <h3>🧠 Skills</h3>
-            <p>Intelligens, språk och mentala superkrafter</p>
+            <h2>🧠 Skills</h2>
+            <p>IQ, språk och mentala superkrafter</p>
         </a>
 
         <a href="meriter.html" class="card">
-            <h3>🏆 Meriter</h3>
-            <p>Otroliga prestationer och rikedomar</p>
+            <h2>🏆 Meriter</h2>
+            <p>Ofattbara prestationer & rikedom</p>
         </a>
 
         <a href="berattelse.html" class="card">
-            <h3>📖 Berättelse</h3>
-            <p>Hugos resa som hjälte</p>
+            <h2>📖 Berättelse</h2>
+            <p>Hjälte-sagan</p>
         </a>
 
         <a href="min-kamp.html" class="card">
-            <h3>👑 Min Kamp</h3>
-            <p>Från hjälte till världshärskare</p>
+            <h2>👑 Min Kamp</h2>
+            <p>Skurk-arc & världsherravälde</p>
         </a>
 
         <a href="casper.html" class="card">
-            <h3>🤵 Assistenten Casper</h3>
-            <p>Historien om Casper Lindén</p>
+            <h2>🤵 Casper Lindén</h2>
+            <p>Assistentens historia</p>
         </a>
 
         <a href="quiz.html" class="card">
-            <h3>🎮 Quiz / Spel</h3>
-            <p>Testa om du är värdig imperiet</p>
+            <h2>🎮 Quiz</h2>
+            <p>Bevisa att du är värdig</p>
         </a>
 
         <a href="stillwater.html" class="card">
-            <h3>💧 Stillwater</h3>
-            <p>Miljardbolaget som renar världens vatten</p>
+            <h2>💧 Stillwater</h2>
+            <p>Miljardföretaget som räddar världen</p>
         </a>
 
     </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <section class="footer fade">
-    <h3>Köp min kurs</h3>
-    <p>Pris: 50 000 KR</p>
-    <p>Kontakta assistent: Casper Lindén</p>
+    <div class="footer-box">
+        <h2>Köp min kurs</h2>
+        <p>Pris: 50 000 KR</p>
+        <p>Kontakta assistent: Casper Lindén</p>
+    </div>
 </section>
 
-<!-- ================= FADE SCRIPT ================= -->
 <script>
-const faders = document.querySelectorAll('.fade');
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add('show');
-  });
+const f=document.querySelectorAll('.fade');
+const o=new IntersectionObserver(e=>{
+  e.forEach(x=>{ if(x.isIntersecting) x.target.classList.add('show');});
 });
-faders.forEach(el=>obs.observe(el));
+f.forEach(el=>o.observe(el));
 </script>
 
 </body>
